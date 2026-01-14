@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content='ОТЕЦ — "вечный вход". Пост-метал / ритуальный дум.' />
+  <title>ОТЕЦ — Вход</title>
+
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg">
+    <!-- Если будет видео-луп, раскомментируй -->
+    <!--
+    <video class="bg__video" autoplay muted loop playsinline>
+      <source src="assets/bg.mp4" type="video/mp4" />
+    </video>
+    -->
+    <div class="bg__vignette"></div>
+    <div class="bg__grain" aria-hidden="true"></div>
+  </div>
+
+  <!-- Top minimal nav -->
+  <header class="topbar">
+    <a class="topbar__brand" href="#top" aria-label="ОТЕЦ">
+      <span class="sigil">⟡</span>
+      <span class="brand">ОТЕЦ</span>
+    </a>
+
+    <nav class="topbar__nav">
+      <a href="#manifest">Догма</a>
+      <a href="#music">Слушать</a>
+      <a href="#links">Связь</a>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+
+    <!-- Gate / Eternal entrance -->
+    <section class="gate" data-reveal>
+      <div class="gate__mark">
+        <img src="assets/logo.svg" alt="Логотип ОТЕЦ" class="logo" />
+      </div>
+
+      <h1 class="h1">ВЕЧНЫЙ ВХОД</h1>
+
+      <p class="lead">
+        Пост-метал / ритуальный дум.<br />
+        <span class="quote">«Время пришло стать тем, кем мечтал»</span>
+      </p>
+
+      <div class="gate__actions">
+        <button class="btn btn--primary" id="enterBtn" type="button">
+          ВОЙТИ
+        </button>
+        <button class="btn btn--ghost" id="muteBtn" type="button" aria-pressed="true">
+          ТИШИНА
+        </button>
+      </div>
+
+      <p class="hint">После входа — никаких объяснений. Только путь.</p>
+    </section>
+
+    <!-- Hidden content (appears after "enter") -->
+    <section class="content" id="content" hidden>
+      <section id="manifest" class="card" data-reveal>
+        <h2 class="h2">ДОГМА</h2>
+        <div class="hr"></div>
+
+        <p class="txt">
+          Закрой свои двери.<br />
+          Заложи камнем окна.<br />
+          Проживи свои дни<br />
+          в этой комнате тёмной.
+        </p>
+
+        <p class="txt dim">
+          Ты никогда не увидишь рассвета —<br />
+          но тебе так уютно в твоей темноте.
+        </p>
+
+        <p class="txt small">
+          <span class="sigil">nascentia</span> — рождение.<br />
+          Священная новая жизнь.
+        </p>
+      </section>
+
+      <section id="music" class="card" data-reveal>
+        <h2 class="h2">СЛУШАТЬ</h2>
+        <div class="hr"></div>
+
+        <p class="txt dim">
+          Здесь может быть:
+          Bandcamp / SoundCloud / YouTube embed — или локальный трек.
+        </p>
+
+        <div class="player">
+          <button class="btn btn--primary" id="playBtn" type="button">ПУСТИТЬ ГОЛОС</button>
+          <span class="player__state" id="playerState">без звука</span>
+        </div>
+
+        <!-- Пример ссылки-агрегатора -->
+        <a class="link" href="https://band.link/0n65I" target="_blank" rel="noopener">
+          band.link — все площадки →
+        </a>
+      </section>
+
+      <section class="card" data-reveal>
+        <h2 class="h2">РЕЛИЗЫ</h2>
+        <div class="hr"></div>
+
+        <div class="release">
+          <div class="release__meta">
+            <div class="release__title">NASCENTIA</div>
+            <div class="release__year">2026</div>
+          </div>
+          <div class="release__actions">
+            <a class="pill" href="https://band.link/0n65I" target="_blank" rel="noopener">Слушать</a>
+            <a class="pill" href="#links">Связь</a>
+          </div>
+        </div>
+
+        <p class="txt small dim">
+          Добавим треклист, обложку и “следующий ритуал”, когда будет готово.
+        </p>
+      </section>
+
+      <section id="links" class="card" data-reveal>
+        <h2 class="h2">СВЯЗЬ</h2>
+        <div class="hr"></div>
+
+        <p class="txt dim">Вступить, следить, звать.</p>
+
+        <div class="grid">
+          <a class="tile" href="#" target="_blank" rel="noopener">
+            <span class="tile__k">Telegram</span>
+            <span class="tile__v">войти в канал</span>
+          </a>
+
+          <a class="tile" href="#" target="_blank" rel="noopener">
+            <span class="tile__k">VK</span>
+            <span class="tile__v">следить</span>
+          </a>
+
+          <a class="tile" href="mailto:father@yourmail.com">
+            <span class="tile__k">Почта</span>
+            <span class="tile__v">писать</span>
+          </a>
+
+          <a class="tile" href="#" target="_blank" rel="noopener">
+            <span class="tile__k">YouTube</span>
+            <span class="tile__v">смотреть</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer" data-reveal>
+        <div class="footer__line"></div>
+        <p class="footer__txt">
+          © <span id="year"></span> ОТЕЦ. Вход не закрывается.
+        </p>
+      </footer>
+    </section>
+
+    <!-- Audio (optional local track) -->
+    <audio id="audio" preload="auto">
+      <!-- Положи assets/track.mp3 -->
+      <source src="assets/track.mp3" type="audio/mpeg" />
+    </audio>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
